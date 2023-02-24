@@ -1,0 +1,14 @@
+const loadQuots = () => {
+    fetch('https://api.kanye.rest/')
+        .then(res => res.json())
+        .then(data => display(data))
+}
+
+const display = (kobita) => {
+    console.log(kobita)
+    const blockQuots = document.getElementById('blockQuots')
+    blockQuots.innerHTML = kobita.quote
+
+}
+
+loadQuots();
